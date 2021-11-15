@@ -1,8 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication
 from menu import Menu
-from players import PlayersWindow
-from painter import Painter
 
 
 def except_hook(cls, exception, traceback):

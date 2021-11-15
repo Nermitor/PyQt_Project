@@ -45,7 +45,6 @@ class PlayersWindow(QMainWindow):
             self.cursor.execute(f"""
             insert into users (login, password) values('{login}', '{password}')
             """)
-            self.connection.commit()
             self.error_label.setText("")
         else:
             self.error_label.setText("Такой пользователь уже есть.")
@@ -71,6 +70,7 @@ class PlayersWindow(QMainWindow):
                     self.players.append(login)
 
     def ok(self):
-        self.painter = Painter(self.players)
+        self.connection.commit()
+        self.painter = Painter(self.players, self.connection)
         self.painter.show()
         self.close()
