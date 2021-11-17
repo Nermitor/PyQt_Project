@@ -3,6 +3,7 @@ from random import choice
 from PyQt5.QtCore import QSize, QPoint, QTimer, Qt
 from PyQt5.QtGui import QColor, QImage, QPainterPath, QPainter, QPen
 from PyQt5.QtWidgets import QFrame, QMainWindow, QColorDialog
+from votes import Votes
 
 
 class PaintField(QFrame):
@@ -119,6 +120,8 @@ class Painter(QMainWindow):
         try:
             self.cur_player = next(self.players)
         except StopIteration:
+            self.votes = Votes(self.plrs)
+            self.votes.show()
             self.close()
         self.cur_player_lbl.setText(self.cur_player)
         self.painter.reset()
