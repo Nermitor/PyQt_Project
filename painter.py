@@ -58,19 +58,16 @@ class PaintField(QFrame):
 
 
 class Painter(QMainWindow):
-    def __init__(self, players, connection):
+    def __init__(self, session):
         super().__init__()
         uic.loadUi("uis/painter_ui.ui", self)
 
-        self.connection = connection
-        self.cur = self.connection.cursor()
+        self.session = session
 
         self.word = self.set_word()
+        self.session.add_others('key_word', self.word)
         self.word_lbl.setText(self.word)
-
-        self.plrs = players
-
-        self.players = iter(players)
+        self.players = iter(self.session.players)
 
         self.total_time = 120
         self.estimated_time = self.total_time
@@ -120,7 +117,7 @@ class Painter(QMainWindow):
         try:
             self.cur_player = next(self.players)
         except StopIteration:
-            self.votes = Votes(self.plrs, self.connection)
+            self.votes = Votes(self.session)
             self.votes.show()
             self.close()
         self.cur_player_lbl.setText(self.cur_player)
@@ -130,7 +127,7 @@ class Painter(QMainWindow):
         self.painter.save(f"pictures/temp/{self.cur_player}.png")
 
     def set_word(self):
-        words = self.cur.execute("""
+        words = self.session.cursor.execute("""
         select picture_name from words
         """).fetchall()
         return choice(words)[0]
