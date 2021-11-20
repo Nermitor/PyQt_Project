@@ -120,7 +120,7 @@ class Painter(QMainWindow):
         try:
             self.cur_player = next(self.players)
         except StopIteration:
-            self.votes = Votes(self.plrs)
+            self.votes = Votes(self.plrs, self.connection)
             self.votes.show()
             self.close()
         self.cur_player_lbl.setText(self.cur_player)

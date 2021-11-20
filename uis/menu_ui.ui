@@ -7,11 +7,18 @@
     <x>0</x>
     <y>0</y>
     <width>389</width>
-    <height>317</height>
+    <height>323</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Best Painter - Menu</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">.new_game_btn{
+	color: red;
+	
+
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="new_game_btn">
