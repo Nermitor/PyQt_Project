@@ -29,10 +29,13 @@ class Session:
         self._connection.commit()
 
     def add_player(self, player):
-        """Добавляет игроов в сессию"""
+        """Добавляет игроков в сессию"""
         self._players.append(player)
 
     def add_others(self, key, value):
         """Добавляет новый параметр в сессию"""
         self._others[key] = value
+
+    def edit_others(self, key, method, value):
+        method(self._others[key], value)
 

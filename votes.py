@@ -5,6 +5,7 @@ from PyQt5 import uic
 from math import ceil
 from datetime import datetime
 from clean import clean_temp_folder
+from best_players import BestPlayers
 
 
 class Votes(QMainWindow):
@@ -30,6 +31,8 @@ class Votes(QMainWindow):
         except StopIteration:
             self.set_score()
             self.close()
+            self.best_players = BestPlayers(self.session)
+            self.best_players.show()
         self.cur_player_lbl.setText(self.voter)
         self.label.setPixmap(QPixmap(f"pictures/temp/{self.img}.png"))
 
@@ -61,7 +64,6 @@ class Votes(QMainWindow):
 
             pic = QPixmap(f"pictures/temp/{login}.png")
             pic.save(self.get_last_path(), "PNG")
-        self.session.commit()
 
     def get_last_path(self):
         """Возвращает путь последней картинки"""
@@ -82,6 +84,10 @@ class Votes(QMainWindow):
         for login, score in self.score.items():  # Перебор логина и очков всех игроков
             if login in winners:  # Прверка на победившего(их) игрока
                 score = ceil(score * self.winner_bonus)  # Домножение результата на множитель бонуса
+                if self.session.others.get("winners", None) is None:
+                    self.session.add_others('winners', [(login, score)])
+                else:
+                    self.session.edit_others('winners', list.append, (login, score))
             self.session.cursor.execute(f"""
                 update score
                 set score = score + {score}
