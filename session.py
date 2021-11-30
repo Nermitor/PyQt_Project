@@ -1,11 +1,15 @@
+import sqlite3 as sql
+
+
 class Session:
     """Игровая сессия"""
+
     def __init__(self, connection, players=None, **others):
         if players is None:
             players = []
         self._players = players  # Игроки ниходящиеся в сессии
-        self._connection = connection  # Соединение с бд
-        self._cursor = connection.cursor()  # Курсор бд
+        self._connection = sql.connect(connection)  # Соединение с бд
+        self._cursor = self._connection.cursor()  # Курсор бд
         self._others = others  # Остальные параметры
 
     @property
@@ -38,4 +42,3 @@ class Session:
 
     def edit_others(self, key, method, value):
         method(self._others[key], value)
-

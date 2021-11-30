@@ -1,19 +1,13 @@
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import uic
-import sqlite3 as sql
 from painter import Painter
-from session import Session
 
 
 class PlayersWindow(QMainWindow):
-    def __init__(self, session=None):
+    def __init__(self, session):
         super().__init__()
         uic.loadUi("uis/players_ui.ui", self)
-        if session is None:
-            self.session = Session(sql.connect("db.sqlite"))  # Создание игровой сессии
-        else:
-            self.load_players_from_session()
-
+        self.session = session # Создание игровой сессии
         self.add_player_btn.clicked.connect(self.add_player)  # Подключение кнопок к функциям
         self.ok_btn.clicked.connect(self.ok)
 
@@ -74,20 +68,11 @@ class PlayersWindow(QMainWindow):
                     self.error_label.setText("Этот игрок уже добавлен.")
                 else:
                     self.session.add_player(login)  # Добавление игрока в игровую сессию
-                    self.add_players_to_player_list(login)
-
-    def add_players_to_player_list(self, login):
-        """Выводит на экран добавленных игроков"""
-        f = str(self.session.cursor.execute(f"""
-                                    select score from score 
-                                    where id = (select id from users where login = '{login}')
-                                """).fetchone()[0])  # Поиск рейтинга нужного игрока
-        self.players_tbl.addItem(f"{login} - {f}")  # Добавление игрока в список игроков
-
-    def load_players_from_session(self):
-        """При наличии уже существующей игровой сессии загружает игроков из неё"""
-        for player in self.session.players:
-            self.add_players_to_player_list(player)
+                    f = self.session.cursor.execute(f"""
+                        select score from score 
+                        where id = (select id from users where login = '{login}')
+                    """).fetchone()[0]  # Поиск рейтинга нужного игрока
+                    self.players_tbl.addItem(f"{login} - {f}")  # Добавление игрока в список игроков
 
     def ok(self):
         if len(self.session.players) < 2:  # Проверка на достаточное количество игроков

@@ -45,12 +45,12 @@ class Votes(QMainWindow):
         mx = max(self.score.values())
         winners = [i[0] for i in self.score.items() if i[1] == mx]
         self.set_points(winners)
-        self.set_best_picture(winners)
+        self.set_best(winners)
         clean_temp_folder()
         self.session.commit()
 
-    def set_best_picture(self, winners):
-        """Устанавливает результат лучших картинок"""
+    def set_best(self, winners):
+        """Устанавливает результат лучших игроков"""
         picture_name_id = self.session.cursor.execute(f"""
             select picture_name_id from words
             where picture_name = '{self.session.others['key_word']}'
@@ -61,9 +61,14 @@ class Votes(QMainWindow):
                 insert into best_pictures (user_id, picture_name_id, time)
                 values ({user_id}, {picture_name_id}, '{time}')
             """)  # Добавление изображения в бд
-
             pic = QPixmap(f"pictures/temp/{login}.png")
             pic.save(self.get_last_path(), "PNG")
+
+            self.session.cursor.execute(f"""
+                update score
+                set wins = wins + 1
+                where id = {user_id}
+            """)  # Обновление количества побед для победителей
 
     def get_last_path(self):
         """Возвращает путь последней картинки"""
@@ -90,7 +95,9 @@ class Votes(QMainWindow):
                     self.session.edit_others('winners', list.append, (login, score))
             self.session.cursor.execute(f"""
                 update score
-                set score = score + {score}
+                set 
+                score = score + {score},
+                games = games + 1    
                 where id = (select id from users where login = '{login}')
             """)  # Обновление результата всех игроков
 
