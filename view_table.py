@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem
 from PyQt5 import uic
-from table_view_ui import Ui_MainWindow
 
-class ViewTable(QMainWindow, Ui_MainWindow):
+
+class ViewTable(QMainWindow):
     def __init__(self, session):
         super().__init__()
         uic.loadUi("uis/table_view_ui.ui", self)
