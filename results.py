@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import uic
 from find_player import FindPlayer
+from view_table import ViewTable
 
 
 class Results(QMainWindow):
@@ -18,4 +19,5 @@ class Results(QMainWindow):
         self.finder.show()
 
     def get_table(self):
-        pass
+        self.table = ViewTable(self.session)
+        self.table.show()
