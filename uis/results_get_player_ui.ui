@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Best Painter - Find Player</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="player_lne">

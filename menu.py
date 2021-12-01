@@ -1,8 +1,9 @@
-from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import uic
+from PyQt5.QtWidgets import QMainWindow
+
 from players import PlayersWindow
-from session import Session
 from results import Results
+from session import Session
 
 
 class Menu(QMainWindow):

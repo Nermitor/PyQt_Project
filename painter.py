@@ -1,9 +1,11 @@
+from random import choice
+
+from PyQt5 import uic
 from PyQt5.QtCore import QSize, QPoint, QTimer, Qt
 from PyQt5.QtGui import QColor, QImage, QPainterPath, QPainter, QPen
 from PyQt5.QtWidgets import QFrame, QMainWindow, QColorDialog
-from PyQt5 import uic
+
 from votes import Votes
-from random import choice
 
 
 class PaintField(QFrame):

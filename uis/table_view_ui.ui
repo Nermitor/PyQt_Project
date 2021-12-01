@@ -10,8 +10,13 @@
     <height>625</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Best Painter - Score Table</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="tableWidget">
@@ -20,7 +25,7 @@
       <x>10</x>
       <y>10</y>
       <width>781</width>
-      <height>571</height>
+      <height>491</height>
      </rect>
     </property>
     <property name="editTriggers">
@@ -57,6 +62,62 @@
       <string>Победы</string>
      </property>
     </column>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>510</y>
+      <width>296</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>40</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Сортировать по:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="ord_by_cmbx">
+       <item>
+        <property name="text">
+         <string>Имя</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Счёт</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Средний результат</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Игры</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Победы</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

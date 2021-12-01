@@ -1,7 +1,7 @@
 """Служебный файл, производит очистку данных. При запуске очищает всё."""
 
-import os
 import glob
+import os
 import sqlite3 as sql
 
 

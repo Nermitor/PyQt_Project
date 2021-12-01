@@ -1,11 +1,13 @@
-from PyQt5.QtWidgets import QMainWindow
-from PyQt5.QtGui import QPixmap
-from funcs import prod
-from PyQt5 import uic
-from math import ceil
 from datetime import datetime
-from clean import clean_temp_folder
+from math import ceil
+
+from PyQt5 import uic
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QMainWindow
+
 from best_players import BestPlayers
+from clean import clean_temp_folder
+from funcs import prod
 
 
 class Votes(QMainWindow):
@@ -47,7 +49,6 @@ class Votes(QMainWindow):
         self.set_points(winners)
         self.set_best(winners)
         clean_temp_folder()
-        self.session.commit()
 
     def set_best(self, winners):
         """Устанавливает результат лучших игроков"""
@@ -61,6 +62,8 @@ class Votes(QMainWindow):
                 insert into best_pictures (user_id, picture_name_id, time)
                 values ({user_id}, {picture_name_id}, '{time}')
             """)  # Добавление изображения в бд
+            self.session.commit()
+
             pic = QPixmap(f"pictures/temp/{login}.png")
             pic.save(self.get_last_path(), "PNG")
 
@@ -68,7 +71,9 @@ class Votes(QMainWindow):
                 update score
                 set wins = wins + 1
                 where id = {user_id}
-            """)  # Обновление количества побед для победителей
+            """)
+            self.session.commit()
+            # Обновление количества побед для победителей
 
     def get_last_path(self):
         """Возвращает путь последней картинки"""
@@ -99,7 +104,9 @@ class Votes(QMainWindow):
                 score = score + {score},
                 games = games + 1    
                 where id = (select id from users where login = '{login}')
-            """)  # Обновление результата всех игроков
+            """)
+            self.session.commit()
+            # Обновление результата всех игроков
 
     def prepare(self):
         """Сохраняет предыдущее и подготавливает к следующему"""
