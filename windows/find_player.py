@@ -1,15 +1,19 @@
 from PyQt5 import uic
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow
 
 
 class FindPlayer(QMainWindow):
     """Ищет конкретного игрока в бд"""
+
     def __init__(self, session):
         super().__init__()
-        uic.loadUi("uis/results_get_player_ui.ui", self)
+        uic.loadUi("uis/find_player_ui.ui", self)
         self.find_btn.clicked.connect(self.find_player)
         self.session = session
         self.labels = (self.score_label, self.mean_score_label, self.wins_label, self.games_label)
+
+        self.setWindowIcon(QIcon("icons/ico.ico"))
 
     def find_player(self):
         """Находит нужного игрока"""
@@ -30,7 +34,8 @@ class FindPlayer(QMainWindow):
             """).fetchone()  # Поиск похожих имён
             if res:
                 self.error_label.setText(
-                    "Данная учётная запись не найдена. Может быть вы имели ввиду:\n" + '\n'.join(res))  # Возможные варианты
+                    "Данная учётная запись не найдена. Может быть вы имели ввиду:\n" + '\n'.join(
+                        res))  # Возможные варианты
         else:  # При успехе
             for wid, text in zip(self.labels, res):
                 wid.setText(str(text))  # Вывод данных в соответствующие поля

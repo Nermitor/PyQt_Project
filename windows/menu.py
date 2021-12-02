@@ -1,9 +1,10 @@
 from PyQt5 import uic
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow
 
-from players import PlayersWindow
-from results import Results
-from session import Session
+from windows.auth import Auth
+from windows.scores import Scores
+from windows.session import Session
 
 
 class Menu(QMainWindow):
@@ -13,12 +14,13 @@ class Menu(QMainWindow):
         self.session = Session("db.sqlite")
         self.new_game_btn.clicked.connect(self.start_players_window)
         self.results_btn.clicked.connect(self.results)
+        self.setWindowIcon(QIcon("icons/ico.ico"))
 
     def start_players_window(self):
-        self.players_window = PlayersWindow(self.session)
+        self.players_window = Auth(self.session)
         self.players_window.show()
         self.close()
 
     def results(self):
-        self.res = Results(self.session)
+        self.res = Scores(self.session)
         self.res.show()

@@ -1,61 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-    <class>MenuWindow</class>
-    <widget class="QMainWindow" name="MenuWindow">
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
         <property name="geometry">
             <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>389</width>
-                <height>347</height>
+                <width>605</width>
+                <height>630</height>
             </rect>
         </property>
         <property name="windowTitle">
-            <string>Best Painter - Menu</string>
-        </property>
-        <property name="styleSheet">
-            <string notr="true">.new_game_btn{
-                color: red;
-
-
-                }
-            </string>
+            <string>Best Painter - Winners</string>
         </property>
         <widget class="QWidget" name="centralwidget">
-            <widget class="QPushButton" name="new_game_btn">
+            <widget class="QLabel" name="label">
                 <property name="geometry">
                     <rect>
-                        <x>90</x>
-                        <y>30</y>
-                        <width>200</width>
-                        <height>80</height>
+                        <x>240</x>
+                        <y>20</y>
+                        <width>251</width>
+                        <height>20</height>
                     </rect>
                 </property>
                 <property name="font">
                     <font>
-                        <pointsize>15</pointsize>
+                        <pointsize>13</pointsize>
                     </font>
                 </property>
                 <property name="text">
-                    <string>Новая игра</string>
+                    <string>Победители:</string>
                 </property>
             </widget>
-            <widget class="QPushButton" name="results_btn">
+            <widget class="QListWidget" name="listWidget">
                 <property name="geometry">
                     <rect>
-                        <x>90</x>
-                        <y>160</y>
-                        <width>200</width>
-                        <height>80</height>
+                        <x>160</x>
+                        <y>90</y>
+                        <width>256</width>
+                        <height>441</height>
                     </rect>
                 </property>
                 <property name="font">
                     <font>
-                        <pointsize>15</pointsize>
+                        <pointsize>12</pointsize>
                     </font>
                 </property>
+            </widget>
+            <widget class="QPushButton" name="exit_btn">
+                <property name="geometry">
+                    <rect>
+                        <x>240</x>
+                        <y>550</y>
+                        <width>75</width>
+                        <height>23</height>
+                    </rect>
+                </property>
                 <property name="text">
-                    <string>Результаты</string>
+                    <string>Выйти</string>
                 </property>
             </widget>
         </widget>
@@ -64,7 +66,7 @@
                 <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>389</width>
+                    <width>605</width>
                     <height>21</height>
                 </rect>
             </property>

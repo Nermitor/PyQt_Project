@@ -2,12 +2,11 @@ from datetime import datetime
 from math import ceil
 
 from PyQt5 import uic
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QPixmap, QIcon
 from PyQt5.QtWidgets import QMainWindow
 
-from best_players import BestPlayers
 from clean import clean_temp_folder
-from funcs import prod
+from windows.game_results import GameResults
 
 
 class Votes(QMainWindow):
@@ -19,9 +18,11 @@ class Votes(QMainWindow):
         self.session = session  # Наследование игровой сессии
 
         self.score = {i: 0 for i in session.players}  # Словарь игрок - очки
-        self.players = prod(session.players)  # Список списков игрок - остальные игроки
+        self.players = self.prod(session.players)  # Список списков игрок - остальные игроки
 
         self.winner_bonus = 1.1  # Множитель очков для победившего игрока(ов)
+
+        self.setWindowIcon(QIcon("icons/ico.ico"))
 
         self.ok_btn.clicked.connect(self.prepare)
         self.go_next()
@@ -33,7 +34,7 @@ class Votes(QMainWindow):
         except StopIteration:
             self.set_score()
             self.close()
-            self.best_players = BestPlayers(self.session)
+            self.best_players = GameResults(self.session)
             self.best_players.show()
         self.cur_player_lbl.setText(self.voter)
         self.label.setPixmap(QPixmap(f"pictures/temp/{self.img}.png"))
@@ -107,6 +108,10 @@ class Votes(QMainWindow):
             """)
             self.session.commit()
             # Обновление результата всех игроков
+
+    @staticmethod
+    def prod(g):
+        return iter(sorted([(el1, el) for el1 in g for el in g if el1 != el], key=lambda x: x[0]))
 
     def prepare(self):
         """Сохраняет предыдущее и подготавливает к следующему"""

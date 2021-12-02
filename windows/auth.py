@@ -1,16 +1,18 @@
 from PyQt5 import uic
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow
 
-from painter import Painter
+from windows.painter import Painter
 
 
-class PlayersWindow(QMainWindow):
+class Auth(QMainWindow):
     def __init__(self, session):
         super().__init__()
-        uic.loadUi("uis/players_ui.ui", self)
-        self.session = session # Создание игровой сессии
+        uic.loadUi("uis/auth_ui.ui", self)
+        self.session = session  # Создание игровой сессии
         self.add_player_btn.clicked.connect(self.add_player)  # Подключение кнопок к функциям
         self.ok_btn.clicked.connect(self.ok)
+        self.setWindowIcon(QIcon("icons/ico.ico"))
 
     def add_player(self):
         """Добавляет игрока к игровой сессии, в случае нового - в базу данных"""

@@ -2,10 +2,10 @@ from random import choice
 
 from PyQt5 import uic
 from PyQt5.QtCore import QSize, QPoint, QTimer, Qt
-from PyQt5.QtGui import QColor, QImage, QPainterPath, QPainter, QPen
+from PyQt5.QtGui import QColor, QImage, QPainterPath, QPainter, QPen, QIcon
 from PyQt5.QtWidgets import QFrame, QMainWindow, QColorDialog
 
-from votes import Votes
+from windows.votes import Votes
 
 
 class PaintField(QFrame):
@@ -93,6 +93,8 @@ class Painter(QMainWindow):
         self.painter = PaintField(20, self)  # Инициализация поля для рисования
 
         self.width_sb.setValue(self.painter.width)
+
+        self.setWindowIcon(QIcon("icons/ico.ico"))
 
         self.prepare_for_next_player()
 
