@@ -76,6 +76,8 @@ class Auth(QMainWindow):
                         where id = (select id from users where login = '{login}')
                     """).fetchone()[0]  # Поиск рейтинга нужного игрока
                     self.players_tbl.addItem(f"{login} - {f}")  # Добавление игрока в список игроков
+                    self.login_lne.clear()
+                    self.password_lne.clear()
 
     def ok(self):
         if len(self.session.players) < 2:  # Проверка на достаточное количество игроков

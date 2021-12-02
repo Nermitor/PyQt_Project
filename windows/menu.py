@@ -2,9 +2,9 @@ from PyQt5 import uic
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow
 
+from session import Session
 from windows.auth import Auth
 from windows.scores import Scores
-from windows.session import Session
 
 
 class Menu(QMainWindow):
