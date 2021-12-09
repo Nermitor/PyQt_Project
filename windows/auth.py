@@ -61,6 +61,7 @@ class Auth(QMainWindow):
             self.error_label.setText("Такой пользователь уже есть.")
 
     def add_player_to_table(self, login, password):
+        self.error_label.clear()
         result = self.session.cursor.execute(f"""
             select * from users where login = '{login}'
         """).fetchall()  # Поиск нужной учётки

@@ -1,146 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-    <class>MainWindow</class>
-    <widget class="QMainWindow" name="MainWindow">
-        <property name="geometry">
-            <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>369</width>
-                <height>804</height>
-            </rect>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>369</width>
+    <height>804</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Best Painter - Packs Table</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>331</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>155</number>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>Набор</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Слова</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>510</y>
+      <width>296</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>40</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Сортировать по:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="ord_by_cmbx">
+       <item>
+        <property name="text">
+         <string>Имя</string>
         </property>
-        <property name="font">
-            <font>
-                <pointsize>10</pointsize>
-            </font>
+       </item>
+       <item>
+        <property name="text">
+         <string>Количество слов</string>
         </property>
-        <property name="windowTitle">
-            <string>Best Painter - Score Table</string>
-        </property>
-        <widget class="QWidget" name="centralwidget">
-            <widget class="QTableWidget" name="tableWidget">
-                <property name="geometry">
-                    <rect>
-                        <x>10</x>
-                        <y>10</y>
-                        <width>331</width>
-                        <height>491</height>
-                    </rect>
-                </property>
-                <property name="editTriggers">
-                    <set>QAbstractItemView::NoEditTriggers</set>
-                </property>
-                <attribute name="horizontalHeaderCascadingSectionResizes">
-                    <bool>true</bool>
-                </attribute>
-                <attribute name="horizontalHeaderDefaultSectionSize">
-                    <number>155</number>
-                </attribute>
-                <column>
-                    <property name="text">
-                        <string>Набор</string>
-                    </property>
-                </column>
-                <column>
-                    <property name="text">
-                        <string>Слова</string>
-                    </property>
-                </column>
-            </widget>
-            <widget class="QWidget" name="layoutWidget">
-                <property name="geometry">
-                    <rect>
-                        <x>10</x>
-                        <y>510</y>
-                        <width>296</width>
-                        <height>24</height>
-                    </rect>
-                </property>
-                <layout class="QHBoxLayout" name="horizontalLayout">
-                    <property name="spacing">
-                        <number>40</number>
-                    </property>
-                    <item>
-                        <widget class="QLabel" name="label">
-                            <property name="font">
-                                <font>
-                                    <pointsize>11</pointsize>
-                                </font>
-                            </property>
-                            <property name="text">
-                                <string>Сортировать по:</string>
-                            </property>
-                        </widget>
-                    </item>
-                    <item>
-                        <widget class="QComboBox" name="ord_by_cmbx">
-                            <item>
-                                <property name="text">
-                                    <string>Имя</string>
-                                </property>
-                            </item>
-                            <item>
-                                <property name="text">
-                                    <string>Количество слов</string>
-                                </property>
-                            </item>
-                        </widget>
-                    </item>
-                </layout>
-            </widget>
-            <widget class="QPushButton" name="add_btn">
-                <property name="geometry">
-                    <rect>
-                        <x>10</x>
-                        <y>550</y>
-                        <width>331</width>
-                        <height>41</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>Добавить</string>
-                </property>
-            </widget>
-            <widget class="QPushButton" name="delete_pack_btn">
-                <property name="geometry">
-                    <rect>
-                        <x>10</x>
-                        <y>600</y>
-                        <width>331</width>
-                        <height>41</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>Удалить</string>
-                </property>
-            </widget>
-            <widget class="QPushButton" name="refresh_btn">
-                <property name="geometry">
-                    <rect>
-                        <x>10</x>
-                        <y>650</y>
-                        <width>331</width>
-                        <height>41</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>Обновить</string>
-                </property>
-            </widget>
-        </widget>
-        <widget class="QMenuBar" name="menubar">
-            <property name="geometry">
-                <rect>
-                    <x>0</x>
-                    <y>0</y>
-                    <width>369</width>
-                    <height>21</height>
-                </rect>
-            </property>
-        </widget>
-        <widget class="QStatusBar" name="statusbar"/>
-    </widget>
-    <resources/>
-    <connections/>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="add_btn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>550</y>
+      <width>331</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Добавить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delete_pack_btn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>600</y>
+      <width>331</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Удалить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="refresh_btn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>650</y>
+      <width>331</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Обновить</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>369</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
 </ui>
