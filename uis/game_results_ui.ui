@@ -1,105 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>562</width>
-    <height>644</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Best Painter - Winners</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">.QMainWindow {
-	background-color: white;
-}</string>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>20</y>
-      <width>571</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">.QLabel {
-	padding: 200px;
-	color: white;
-	background-color: #3783bd;
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>562</width>
+                <height>644</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Best Painter - Winners</string>
+        </property>
+        <property name="styleSheet">
+            <string notr="true">.QMainWindow {
+                background-color: white;
+                }
+            </string>
+        </property>
+        <widget class="QWidget" name="centralwidget">
+            <widget class="QLabel" name="label">
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>20</y>
+                        <width>571</width>
+                        <height>31</height>
+                    </rect>
+                </property>
+                <property name="font">
+                    <font>
+                        <pointsize>13</pointsize>
+                    </font>
+                </property>
+                <property name="styleSheet">
+                    <string notr="true">.QLabel {
+                        padding: 200px;
+                        color: white;
+                        background-color: #3783bd;
 
-}</string>
-    </property>
-    <property name="text">
-     <string>Победители:</string>
-    </property>
-   </widget>
-   <widget class="QListWidget" name="listWidget">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>70</y>
-      <width>281</width>
-      <height>441</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">.QListWidjet {
-	border-radius: 40px;
-}</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="exit_btn">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>530</y>
-      <width>281</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">.QPushButton {
-	color: white;
-	background-color: #375fbd;
-	border: none;
-	border-radius: 10px;
-	font-size: 15px;
-}</string>
-    </property>
-    <property name="text">
-     <string>Выйти</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>562</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
- </widget>
- <resources/>
- <connections/>
+                        }
+                    </string>
+                </property>
+                <property name="text">
+                    <string>Победители:</string>
+                </property>
+            </widget>
+            <widget class="QListWidget" name="listWidget">
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>70</y>
+                        <width>281</width>
+                        <height>441</height>
+                    </rect>
+                </property>
+                <property name="font">
+                    <font>
+                        <pointsize>12</pointsize>
+                    </font>
+                </property>
+                <property name="styleSheet">
+                    <string notr="true">.QListWidjet {
+                        border-radius: 40px;
+                        }
+                    </string>
+                </property>
+            </widget>
+            <widget class="QPushButton" name="exit_btn">
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>530</y>
+                        <width>281</width>
+                        <height>31</height>
+                    </rect>
+                </property>
+                <property name="styleSheet">
+                    <string notr="true">.QPushButton {
+                        color: white;
+                        background-color: #375fbd;
+                        border: none;
+                        border-radius: 10px;
+                        font-size: 15px;
+                        }
+                    </string>
+                </property>
+                <property name="text">
+                    <string>Выйти</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QMenuBar" name="menubar">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>562</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QStatusBar" name="statusbar"/>
+    </widget>
+    <resources/>
+    <connections/>
 </ui>

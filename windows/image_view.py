@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QMainWindow
 
 class ImageView(QMainWindow):
     """Окно показа картинки"""
+
     def __init__(self, image):
         super().__init__()
         uic.loadUi("uis/image_view_ui.ui", self)

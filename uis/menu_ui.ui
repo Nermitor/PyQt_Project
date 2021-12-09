@@ -1,142 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MenuWindow</class>
- <widget class="QMainWindow" name="MenuWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>389</width>
-    <height>506</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Best Painter - Menu</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">.QMainWindow {
-	background-color: white;
-}</string>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="new_game_btn">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>40</y>
-      <width>200</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">.QPushButton {
-	background-color: #376fbd;
-	color: white;
-	border: none;
-	border-radius: 10px;
+    <class>MenuWindow</class>
+    <widget class="QMainWindow" name="MenuWindow">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>389</width>
+                <height>506</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Best Painter - Menu</string>
+        </property>
+        <property name="styleSheet">
+            <string notr="true">.QMainWindow {
+                background-color: white;
+                }
+            </string>
+        </property>
+        <widget class="QWidget" name="centralwidget">
+            <widget class="QPushButton" name="new_game_btn">
+                <property name="geometry">
+                    <rect>
+                        <x>90</x>
+                        <y>40</y>
+                        <width>200</width>
+                        <height>80</height>
+                    </rect>
+                </property>
+                <property name="font">
+                    <font>
+                        <pointsize>15</pointsize>
+                    </font>
+                </property>
+                <property name="styleSheet">
+                    <string notr="true">.QPushButton {
+                        background-color: #376fbd;
+                        color: white;
+                        border: none;
+                        border-radius: 10px;
 
-}
+                        }
 
-.QPushButton:hover {
-	
-	background-color: #4a86a8;
-	color: white;
-	border-radius: 10px;
+                        .QPushButton:hover {
 
-}</string>
-    </property>
-    <property name="text">
-     <string>Новая игра</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="results_btn">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>140</y>
-      <width>200</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">.QPushButton {
-	background-color: #3783bd;
-	color: white;
-	border: none;
-	border-radius: 10px;
+                        background-color: #4a86a8;
+                        color: white;
+                        border-radius: 10px;
 
-}
+                        }
+                    </string>
+                </property>
+                <property name="text">
+                    <string>Новая игра</string>
+                </property>
+            </widget>
+            <widget class="QPushButton" name="results_btn">
+                <property name="geometry">
+                    <rect>
+                        <x>90</x>
+                        <y>140</y>
+                        <width>200</width>
+                        <height>80</height>
+                    </rect>
+                </property>
+                <property name="font">
+                    <font>
+                        <pointsize>15</pointsize>
+                    </font>
+                </property>
+                <property name="styleSheet">
+                    <string notr="true">.QPushButton {
+                        background-color: #3783bd;
+                        color: white;
+                        border: none;
+                        border-radius: 10px;
 
-.QPushButton:hover {
-	
-	background-color: #4a86a8;
-	color: white;
-	border-radius: 10px;
+                        }
 
-}</string>
-    </property>
-    <property name="text">
-     <string>Результаты</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="words_packs_btn">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>240</y>
-      <width>200</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">.QPushButton {
-	background-color: #378ebd;
-	color: white;
-	border: none;
-	border-radius: 10px;
+                        .QPushButton:hover {
 
-}
+                        background-color: #4a86a8;
+                        color: white;
+                        border-radius: 10px;
 
-.QPushButton:hover {
-	
-	background-color: #4a86a8;
-	color: white;
-	border-radius: 10px;
+                        }
+                    </string>
+                </property>
+                <property name="text">
+                    <string>Результаты</string>
+                </property>
+            </widget>
+            <widget class="QPushButton" name="words_packs_btn">
+                <property name="geometry">
+                    <rect>
+                        <x>90</x>
+                        <y>240</y>
+                        <width>200</width>
+                        <height>80</height>
+                    </rect>
+                </property>
+                <property name="font">
+                    <font>
+                        <pointsize>15</pointsize>
+                    </font>
+                </property>
+                <property name="styleSheet">
+                    <string notr="true">.QPushButton {
+                        background-color: #378ebd;
+                        color: white;
+                        border: none;
+                        border-radius: 10px;
 
-}</string>
-    </property>
-    <property name="text">
-     <string>Наборы Слов</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>389</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
- </widget>
- <resources/>
- <connections/>
+                        }
+
+                        .QPushButton:hover {
+
+                        background-color: #4a86a8;
+                        color: white;
+                        border-radius: 10px;
+
+                        }
+                    </string>
+                </property>
+                <property name="text">
+                    <string>Наборы Слов</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QMenuBar" name="menubar">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>389</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QStatusBar" name="statusbar"/>
+    </widget>
+    <resources/>
+    <connections/>
 </ui>

@@ -1,142 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>808</width>
-    <height>656</height>
-   </rect>
-  </property>
-  <property name="font">
-   <font>
-    <pointsize>10</pointsize>
-   </font>
-  </property>
-  <property name="windowTitle">
-   <string>Best Painter - Pictures Table</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">.QMainWindow {
-	background-color: #a0dadb;
-}</string>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QTableWidget" name="tableWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>781</width>
-      <height>491</height>
-     </rect>
-    </property>
-    <property name="editTriggers">
-     <set>QAbstractItemView::NoEditTriggers</set>
-    </property>
-    <attribute name="horizontalHeaderCascadingSectionResizes">
-     <bool>true</bool>
-    </attribute>
-    <attribute name="horizontalHeaderDefaultSectionSize">
-     <number>193</number>
-    </attribute>
-    <column>
-     <property name="text">
-      <string>Имя Игрока</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Название картинки</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Путь</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Время</string>
-     </property>
-    </column>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>510</y>
-      <width>360</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <property name="spacing">
-      <number>40</number>
-     </property>
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="font">
-        <font>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">.QLabel {
-	font-size: 15px;
-}</string>
-       </property>
-       <property name="text">
-        <string>Сортировать по:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="ord_by_cmbx">
-       <property name="styleSheet">
-        <string notr="true">.QComboBox {
-	
-}</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>Имя</string>
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>808</width>
+                <height>656</height>
+            </rect>
         </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Название картинки</string>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
         </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Путь</string>
+        <property name="windowTitle">
+            <string>Best Painter - Pictures Table</string>
         </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Время</string>
+        <property name="styleSheet">
+            <string notr="true">.QMainWindow {
+                background-color: #a0dadb;
+                }
+            </string>
         </property>
-       </item>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>808</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
- </widget>
- <resources/>
- <connections/>
+        <widget class="QWidget" name="centralwidget">
+            <widget class="QTableWidget" name="tableWidget">
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>10</y>
+                        <width>781</width>
+                        <height>491</height>
+                    </rect>
+                </property>
+                <property name="editTriggers">
+                    <set>QAbstractItemView::NoEditTriggers</set>
+                </property>
+                <attribute name="horizontalHeaderCascadingSectionResizes">
+                    <bool>true</bool>
+                </attribute>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                    <number>193</number>
+                </attribute>
+                <column>
+                    <property name="text">
+                        <string>Имя Игрока</string>
+                    </property>
+                </column>
+                <column>
+                    <property name="text">
+                        <string>Название картинки</string>
+                    </property>
+                </column>
+                <column>
+                    <property name="text">
+                        <string>Путь</string>
+                    </property>
+                </column>
+                <column>
+                    <property name="text">
+                        <string>Время</string>
+                    </property>
+                </column>
+            </widget>
+            <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>510</y>
+                        <width>360</width>
+                        <height>41</height>
+                    </rect>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout">
+                    <property name="spacing">
+                        <number>40</number>
+                    </property>
+                    <item>
+                        <widget class="QLabel" name="label">
+                            <property name="font">
+                                <font>
+                                    <pointsize>-1</pointsize>
+                                </font>
+                            </property>
+                            <property name="styleSheet">
+                                <string notr="true">.QLabel {
+                                    font-size: 15px;
+                                    }
+                                </string>
+                            </property>
+                            <property name="text">
+                                <string>Сортировать по:</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QComboBox" name="ord_by_cmbx">
+                            <property name="styleSheet">
+                                <string notr="true">.QComboBox {
+
+                                    }
+                                </string>
+                            </property>
+                            <item>
+                                <property name="text">
+                                    <string>Имя</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Название картинки</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Путь</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Время</string>
+                                </property>
+                            </item>
+                        </widget>
+                    </item>
+                </layout>
+            </widget>
+        </widget>
+        <widget class="QMenuBar" name="menubar">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>808</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QStatusBar" name="statusbar"/>
+    </widget>
+    <resources/>
+    <connections/>
 </ui>

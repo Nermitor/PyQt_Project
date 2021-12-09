@@ -1,4 +1,5 @@
 from PyQt5 import uic
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow, QFileDialog
 
 
@@ -8,6 +9,7 @@ class WordsPackEditor(QMainWindow):
     def __init__(self, session, edit_pack_name=None):
         super().__init__()
         uic.loadUi("uis/words_pack_editor_ui.ui", self)
+        self.setWindowIcon(QIcon("icons/ico.ico"))
         self.session = session
         self.edit_pack_name = edit_pack_name  # В случае редактировния, а не добавления хранится изначально имя
         self.save_pack_btn.clicked.connect(self.save_pack)

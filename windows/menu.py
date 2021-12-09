@@ -10,6 +10,7 @@ from windows.words_packs_table import WordsPackTable
 
 class Menu(QMainWindow):
     """Меню"""
+
     def __init__(self):
         super().__init__()
         uic.loadUi("uis/menu_ui.ui", self)

@@ -80,7 +80,6 @@ class Painter(QMainWindow):
         self.total_time = 120  # Общее время для рисоывания
         self.estimated_time = self.total_time  # Текущее оставшееся время
 
-
         self.timer = QTimer(self)  # Таймер для обновления времени
         self.timer.timeout.connect(self.update_timer)
         self.timer.setInterval(1000)  # Установка интервала таймера в 1 секунду

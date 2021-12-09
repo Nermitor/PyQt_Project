@@ -1,9 +1,10 @@
+from itertools import chain
+
 from PyQt5 import uic
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow
 
 from windows.painter import Painter
-from itertools import chain
 
 
 class Auth(QMainWindow):

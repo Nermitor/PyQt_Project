@@ -1,9 +1,13 @@
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QTableWidgetItem
+
 from windows.table import Table
-from PyQt5.QtWidgets import QTableWidgetItem, QTableWidget
 from windows.words_pack_editor import WordsPackEditor
+
 
 class WordsPackTable(Table):
     """Отображает наборы слов"""
+
     def __init__(self, session):
         self.query = """
             select pack_name, count(DISTINCT picture_name_id) as c
@@ -16,6 +20,7 @@ class WordsPackTable(Table):
             1: '\norder by c DESC'
         }
         super().__init__(session, "uis/words_packs_table_ui.ui")
+        self.setWindowIcon(QIcon("icons/ico.ico"))
         self.tableWidget.itemDoubleClicked.connect(self.edit_pack)
         self.add_btn.clicked.connect(self.add_pack)
         self.refresh_btn.clicked.connect(self.update_table)
@@ -46,5 +51,3 @@ class WordsPackTable(Table):
             where pack_name in ({','.join(map(lambda x: x.join("''"), packs_names))})
         """)
         self.session.commit()
-
-
