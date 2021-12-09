@@ -14,7 +14,8 @@ class Table(QMainWindow):
         self.update_table(0)
         self.setWindowIcon(QIcon("icons/ico.ico"))
 
-    def update_table(self, order_by):
+    def update_table(self, order_by=0):
+        """Обновляет таблицу с заданной сортировкой"""
         result = self.session.cursor.execute(self.query + self.vars[order_by]).fetchall()  # Получение всей таблицы
         if result:
             rows_count = len(result)  # Количество строк

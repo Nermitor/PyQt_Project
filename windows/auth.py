@@ -3,6 +3,7 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow
 
 from windows.painter import Painter
+from itertools import chain
 
 
 class Auth(QMainWindow):
@@ -12,6 +13,7 @@ class Auth(QMainWindow):
         self.session = session  # Создание игровой сессии
         self.add_player_btn.clicked.connect(self.add_player)  # Подключение кнопок к функциям
         self.ok_btn.clicked.connect(self.ok)
+        self.load_packs()
         self.setWindowIcon(QIcon("icons/ico.ico"))
 
     def add_player(self):
@@ -79,11 +81,19 @@ class Auth(QMainWindow):
                     self.login_lne.clear()
                     self.password_lne.clear()
 
+    def load_packs(self):
+        """Загружает доступные наборы слов в combobox"""
+        packs = self.session.cursor.execute(f"""
+            select pack_name from packs
+            where visibility = true
+        """).fetchall()
+        self.packs_cb.addItems(map(str, chain(*packs)))
+
     def ok(self):
         if len(self.session.players) < 2:  # Проверка на достаточное количество игроков
             self.error_label.setText("Для игры требуется как минимум 2 игрока.")
         else:
             self.session.commit()  # Подтверждение изменений в бд
-            self.painter = Painter(self.session)
+            self.painter = Painter(self.session, self.packs_cb.currentText())
             self.painter.show()  # Вызов следующего окна
             self.close()

@@ -66,12 +66,12 @@ class PaintField(QFrame):
 class Painter(QMainWindow):
     """Основное окно"""
 
-    def __init__(self, session):
+    def __init__(self, session, pack_name):
         super().__init__()
         uic.loadUi("uis/painter_ui.ui", self)  # Загрузка интерфейса
 
         self.session = session  # Наследование игровой сессии
-
+        self.pack_name = pack_name
         self.word = self.get_word()  # Установка слова для рисования
         self.session.add_others('key_word', self.word)  # Добавление слова к дополнительным параметрам игровой сессии
         self.word_lbl.setText(self.word)  # Выведение вышеупомянутого слова на экран
@@ -79,6 +79,7 @@ class Painter(QMainWindow):
 
         self.total_time = 120  # Общее время для рисоывания
         self.estimated_time = self.total_time  # Текущее оставшееся время
+
 
         self.timer = QTimer(self)  # Таймер для обновления времени
         self.timer.timeout.connect(self.update_timer)
@@ -144,7 +145,8 @@ class Painter(QMainWindow):
 
     def get_word(self):
         """Выбирает рандомное слово из бд words"""
-        words = self.session.cursor.execute("""
+        words = self.session.cursor.execute(f"""
             select picture_name from words
+            where pack_id = (select pack_id from packs where pack_name = '{self.pack_name}' and visibility = true)
         """).fetchall()
         return choice(words)[0]

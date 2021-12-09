@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>808</width>
-    <height>625</height>
+    <width>369</width>
+    <height>804</height>
    </rect>
   </property>
   <property name="font">
@@ -24,7 +24,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>781</width>
+      <width>331</width>
       <height>491</height>
      </rect>
     </property>
@@ -39,27 +39,12 @@
     </attribute>
     <column>
      <property name="text">
-      <string>Имя</string>
+      <string>Набор</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Счёт</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Средний результат</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Игры</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Победы</string>
+      <string>Слова</string>
      </property>
     </column>
    </widget>
@@ -97,27 +82,51 @@
        </item>
        <item>
         <property name="text">
-         <string>Счёт</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Средний результат</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Игры</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Победы</string>
+         <string>Количество слов</string>
         </property>
        </item>
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="add_btn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>550</y>
+      <width>331</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Добавить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delete_pack_btn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>600</y>
+      <width>331</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Удалить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="refresh_btn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>650</y>
+      <width>331</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Обновить</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -125,7 +134,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>808</width>
+     <width>369</width>
      <height>21</height>
     </rect>
    </property>

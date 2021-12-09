@@ -1,5 +1,3 @@
-from PyQt5.QtWidgets import QTableWidgetItem
-
 from windows.image_view import ImageView
 from windows.table import Table
 
@@ -25,7 +23,8 @@ class PicturesTable(Table):
         super().__init__(session, "uis/pictures_table_ui.ui")
         self.tableWidget.itemDoubleClicked.connect(self.present_image)
 
-    def present_image(self, item: QTableWidgetItem):
+    def present_image(self, item):
+        """Показ изображения"""
         if item.column() == 2:
             path = item.text()
             self.image_view = ImageView(path)

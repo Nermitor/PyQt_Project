@@ -30,6 +30,18 @@ def clean_db():
     cur.execute("""
         delete from best_pictures where TRUE
     """)
+    cur.execute("""
+        delete from packs where
+        pack_name != 'standart_pack'
+    """)
+    cur.execute("""
+        delete from words where pack_id != (select pack_id from packs where pack_name = 'standart_pack')
+    """)
+    cur.execute("""
+        update packs
+        set visibility = true
+        where pack_name = 'standart_pack'
+    """)
     con.commit()
 
 
