@@ -1,2 +1,2 @@
-sqlite3
 PyQt5
+pyqt5-tools

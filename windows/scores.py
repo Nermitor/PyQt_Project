@@ -12,7 +12,7 @@ class Scores(QMainWindow):
 
     def __init__(self, session):
         super().__init__()
-        uic.loadUi("uis/scores.ui", self)  # Загрузка интерфейсп
+        uic.loadUi("uis/scores.ui", self)  # Загрузка интерфейс
         self.find_player_btn.clicked.connect(self.find_player)
         self.get_picture_table_btn.clicked.connect(self.get_pictures_table)
         self.get_table_btn.clicked.connect(self.get_players_table)  # Подключение кнопок к функциям

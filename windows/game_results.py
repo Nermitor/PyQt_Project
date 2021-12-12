@@ -17,4 +17,4 @@ class GameResults(QMainWindow):
 
     def load_winners(self):
         for login, score in self.session.others['winners']:
-            self.listWidget.addItem(f"{login} (+{score})")
+            self.listWidget.addItem(f"{login} {score}")

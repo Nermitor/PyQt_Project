@@ -44,7 +44,7 @@
                     </string>
                 </property>
                 <property name="text">
-                    <string>Победители:</string>
+                    <string>Итоги:</string>
                 </property>
             </widget>
             <widget class="QListWidget" name="listWidget">

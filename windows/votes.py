@@ -28,7 +28,7 @@ class Votes(QMainWindow):
         self.go_next()
 
     def go_next(self):
-        """Отображает следующюю пару (голосующий - картинка другого игрока)"""
+        """Отображает следующую пару (голосующий - картинка другого игрока)"""
         try:
             self.voter, self.img = next(self.players)
         except StopIteration:
@@ -93,12 +93,14 @@ class Votes(QMainWindow):
     def set_points(self, winners):
         """Устанавливает результат очков"""
         for login, score in self.score.items():  # Перебор логина и очков всех игроков
-            if login in winners:  # Прверка на победившего(их) игрока
-                score = ceil(score * self.winner_bonus)  # Домножение результата на множитель бонуса
-                if self.session.others.get("winners", None) is None:
-                    self.session.add_others('winners', [(login, score)])
-                else:
-                    self.session.edit_others('winners', list.append, (login, score))
+            scr = score
+            if login in winners:  # Проверка на победившего(их) игрока
+                score = ceil(score * self.winner_bonus)  # Умножение результата на множитель бонуса
+                scr = f"{score} (+{int((self.winner_bonus - 1) * 100)}%)"
+            if self.session.others.get("winners", None) is None:
+                self.session.add_others('winners', [(login, scr)])
+            else:
+                self.session.edit_others('winners', list.append, (login, scr))
             self.session.cursor.execute(f"""
                 update score
                 set 

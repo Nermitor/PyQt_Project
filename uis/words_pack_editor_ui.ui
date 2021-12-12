@@ -1,114 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>375</width>
-    <height>725</height>
-   </rect>
-  </property>
-  <property name="font">
-   <font>
-    <pointsize>10</pointsize>
-   </font>
-  </property>
-  <property name="windowTitle">
-   <string>Best Painter - Pack Editor</string>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="pack_name_lne">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>20</y>
-      <width>181</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="words_te">
-    <property name="geometry">
-     <rect>
-      <x>43</x>
-      <y>100</y>
-      <width>281</width>
-      <height>351</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="save_pack_btn">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>470</y>
-      <width>281</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Сохранить</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="load_from_file_btn">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>510</y>
-      <width>281</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Загрузить из файла</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="copy_name_ckb">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>550</y>
-      <width>141</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Скопировать имя</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="error_label">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>580</y>
-      <width>281</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>375</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
- </widget>
- <resources/>
- <connections/>
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>375</width>
+                <height>725</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>10</pointsize>
+            </font>
+        </property>
+        <property name="windowTitle">
+            <string>Best Painter - Pack Editor</string>
+        </property>
+        <widget class="QWidget" name="centralwidget">
+            <widget class="QLineEdit" name="pack_name_lne">
+                <property name="geometry">
+                    <rect>
+                        <x>90</x>
+                        <y>20</y>
+                        <width>181</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QPlainTextEdit" name="words_te">
+                <property name="geometry">
+                    <rect>
+                        <x>43</x>
+                        <y>100</y>
+                        <width>281</width>
+                        <height>351</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QPushButton" name="save_pack_btn">
+                <property name="geometry">
+                    <rect>
+                        <x>40</x>
+                        <y>470</y>
+                        <width>281</width>
+                        <height>23</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Сохранить</string>
+                </property>
+            </widget>
+            <widget class="QPushButton" name="load_from_file_btn">
+                <property name="geometry">
+                    <rect>
+                        <x>40</x>
+                        <y>510</y>
+                        <width>281</width>
+                        <height>23</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Загрузить из файла</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox" name="copy_name_ckb">
+                <property name="geometry">
+                    <rect>
+                        <x>40</x>
+                        <y>550</y>
+                        <width>141</width>
+                        <height>17</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Скопировать имя</string>
+                </property>
+            </widget>
+            <widget class="QLabel" name="error_label">
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>580</y>
+                        <width>281</width>
+                        <height>71</height>
+                    </rect>
+                </property>
+                <property name="font">
+                    <font>
+                        <pointsize>9</pointsize>
+                    </font>
+                </property>
+                <property name="text">
+                    <string/>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QMenuBar" name="menubar">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>375</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QStatusBar" name="statusbar"/>
+    </widget>
+    <resources/>
+    <connections/>
 </ui>
